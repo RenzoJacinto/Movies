@@ -1,6 +1,5 @@
 package com.movies.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,10 @@ import org.springframework.stereotype.Service;
 import com.movies.dao.IMovieDao;
 import com.movies.domain.Movie;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class MovieService implements IMovieService {
 
     @Autowired
@@ -18,6 +20,7 @@ public class MovieService implements IMovieService {
     @Override
     public void save(Movie movie) {
         movieDao.save(movie);
+        log.info("Movie saved: " + movie.toString());
     }
 
     @Override
@@ -39,5 +42,5 @@ public class MovieService implements IMovieService {
     public List<Movie> findByTitle(String title) {
         return movieDao.findByTitleLike(title);
     }
-    
+
 }

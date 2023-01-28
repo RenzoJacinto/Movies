@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.movies.domain.Movie;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
+@Builder
 public class MoviesResponse {
 
     private List<Movie> movies;
     private int total;
-    
+
 }

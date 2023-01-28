@@ -9,5 +9,5 @@ import com.movies.domain.Movie;
 public interface IMovieDao extends JpaRepository<Movie, Long> {
 
     public List<Movie> findByTitleLike(String title);
-    
+
 }
